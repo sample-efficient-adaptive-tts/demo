@@ -1,1 +1,1617 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Voice imitation samples TODO: title </title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="//cdn.muicss.com/mui-0.9.39/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+    <style type="text/css">
+      body {
+        text-align: center;
+      }
+      #container {
+        display: inline-block;
+        margin: 0 auto;
+        clear: both;
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .panel {
+        overflow: hidden;
+      }
+
+      .box {
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
+        margin: 1em;
+        min-height: 4em;
+        width: 30em;
+        padding: 1em;
+        float: left;
+      }
+      .box > .label {
+        text-transform: uppercase;
+        padding-bottom: .2em;
+      }
+      .clearfix {
+        clear: both;
+      }
+
+      .comparison-table tbody tr td {
+      }
+      .comparison-table > thead > tr > th:first-of-type,
+      .comparison-table > tbody > tr > td:first-of-type {
+        width: 420px;
+        border-right: 2px solid rgba(0,0,0,.12);
+      }
+      .comparison-table > tbody > tr > td:first-of-type > span:first-of-type {
+        line-height: 60px;
+      }
+      .comparison-table > tbody > tr > td:nth-of-type(n + 1) {
+        width: 280px;
+      }
+      .audio-player {
+        width: 270px;
+        height: 55px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="mui--text-display1 mui--text-dark-secondary">
+        Example imitated utterances for each approach
+      </div>
+      <!-------------------------------------------------------------------------------->
+      <div class="panel mui-panel">
+        <ul class="mui-tabs__bar">
+
+          <li class="mui--is-active">
+            <a data-mui-toggle="tab" data-mui-controls="pane-sentence-1">
+              Sentence 1
+            </a>
+          </li>
+
+          <li class="">
+            <a data-mui-toggle="tab" data-mui-controls="pane-sentence-2">
+              Sentence 2
+            </a>
+          </li>
+
+          <li class="">
+            <a data-mui-toggle="tab" data-mui-controls="pane-sentence-3">
+              Sentence 3
+            </a>
+          </li>
+
+          <li class="">
+            <a data-mui-toggle="tab" data-mui-controls="pane-sentence-4">
+              Sentence 4
+            </a>
+          </li>
+
+        </ul>
+
+
+        <div
+            class="mui-tabs__pane mui--is-active"
+            id="pane-sentence-1">
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Description
+            </div>
+            Each row shows a demonstration waveform followed by three imitation approaches
+            given the same text.
+            Demonstration waveforms are 5 minutes long (for VCTK)
+            or 10 minutes long (for Librispeech).
+          </div>
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Sentence spoken
+            </div>
+            Here are some pages for who sells toms shoes.
+          </div>
+          <div class="clearfix"></div>
+          <table class="comparison-table mui-table mui-table">
+            <thead>
+              <tr>
+                <th>Real demonstration utterance</th>
+
+                  <th>Both adapt speaker embedding and finetune network</th>
+
+                  <th>Only adapt speaker embedding</th>
+
+                  <th>Encoder network</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 2300
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_2300.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_2300_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_2300_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_2300_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 3575
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_3575.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_3575_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_3575_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_3575_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 7729
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_7729.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_7729_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_7729_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_7729_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p301
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p301.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p301_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p301_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p301_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p318
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p318.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p318_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p318_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p318_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p360
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p360.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p360_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p360_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p360_sentence_008.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div
+            class="mui-tabs__pane "
+            id="pane-sentence-2">
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Description
+            </div>
+            Each row shows a demonstration waveform followed by three imitation approaches
+            given the same text.
+            Demonstration waveforms are 5 minutes long (for VCTK)
+            or 10 minutes long (for Librispeech).
+          </div>
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Sentence spoken
+            </div>
+            Modern birds are classified as coelurosaurs by nearly all palaeontologists..
+          </div>
+          <div class="clearfix"></div>
+          <table class="comparison-table mui-table mui-table">
+            <thead>
+              <tr>
+                <th>Real demonstration utterance</th>
+
+                  <th>Both adapt speaker embedding and finetune network</th>
+
+                  <th>Only adapt speaker embedding</th>
+
+                  <th>Encoder network</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 2300
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_2300.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_2300_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_2300_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_2300_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 3575
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_3575.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_3575_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_3575_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_3575_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 7729
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_7729.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_7729_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_7729_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_7729_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p301
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p301.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p301_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p301_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p301_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p318
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p318.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p318_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p318_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p318_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p360
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p360.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p360_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p360_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p360_sentence_082.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div
+            class="mui-tabs__pane "
+            id="pane-sentence-3">
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Description
+            </div>
+            Each row shows a demonstration waveform followed by three imitation approaches
+            given the same text.
+            Demonstration waveforms are 5 minutes long (for VCTK)
+            or 10 minutes long (for Librispeech).
+          </div>
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Sentence spoken
+            </div>
+            There were many editions of these works still being used in the 19th century..
+          </div>
+          <div class="clearfix"></div>
+          <table class="comparison-table mui-table mui-table">
+            <thead>
+              <tr>
+                <th>Real demonstration utterance</th>
+
+                  <th>Both adapt speaker embedding and finetune network</th>
+
+                  <th>Only adapt speaker embedding</th>
+
+                  <th>Encoder network</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 2300
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_2300.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_2300_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_2300_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_2300_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 3575
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_3575.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_3575_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_3575_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_3575_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 7729
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_7729.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_7729_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_7729_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_7729_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p301
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p301.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p301_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p301_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p301_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p318
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p318.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p318_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p318_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p318_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p360
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p360.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p360_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p360_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p360_sentence_078.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div
+            class="mui-tabs__pane "
+            id="pane-sentence-4">
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Description
+            </div>
+            Each row shows a demonstration waveform followed by three imitation approaches
+            given the same text.
+            Demonstration waveforms are 5 minutes long (for VCTK)
+            or 10 minutes long (for Librispeech).
+          </div>
+          <div class="box">
+            <div class="label mui--text-dark-secondary mui--text-caption">
+              Sentence spoken
+            </div>
+            The town is further intersected by numerous small canals with tree-bordered quays..
+          </div>
+          <div class="clearfix"></div>
+          <table class="comparison-table mui-table mui-table">
+            <thead>
+              <tr>
+                <th>Real demonstration utterance</th>
+
+                  <th>Both adapt speaker embedding and finetune network</th>
+
+                  <th>Only adapt speaker embedding</th>
+
+                  <th>Encoder network</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 2300
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_2300.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_2300_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_2300_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_2300_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 3575
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_3575.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_3575_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_3575_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_3575_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    Librispeech 7729
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/librispeech_7729.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/librispeech_7729_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/librispeech_7729_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/librispeech_7729_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p301
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p301.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p301_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p301_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p301_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p318
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p318.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p318_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p318_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p318_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="mui--pull-left">
+                    VCTK Speaker p360
+                    </span>
+                    <span class="mui--pull-right">
+                      <audio
+                        controls
+                        class="audio-player"
+                        preload="metadata"
+                        src="wavs/all_models/real_refs/vctk_p360.wav"></audio>
+                    </span>
+                    <span class="mui--clearfix"></span>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_all/vctk_p360_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/adapt_emb/vctk_p360_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                  <td>
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/encoder/vctk_p360_sentence_095.wav">
+                    </audio>
+                  </td>
+
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-------------------------------------------------------------------------------->
+      <div class="mui--text-display1 mui--text-dark-secondary">
+        Effect of demo waveform length on quality
+      </div>
+      <div class="mui-panel">
+        <div class="box">
+          <div class="label mui--text-dark-secondary mui--text-caption">
+            Description
+          </div>
+          Comparison of different lengths of demonstration utterances.
+          Uses the first approach above: both adapt the speaker embedding and finetune the network.
+        </div>
+        <div class="box">
+          <div class="label mui--text-dark-secondary mui--text-caption">
+            Sentence spoken
+          </div>
+          Here are some pages for who sells Toms shoes.
+        </div>
+        <div class="clearfix"></div>
+        <table class="comparison-table mui-table mui-table">
+          <thead>
+            <tr>
+              <th>Real demonstration utterance</th>
+
+                <th>Using 10 seconds of demo waveform</th>
+
+                <th>Using 1 minute of demo waveform</th>
+
+                <th>Using 5 minutes (LibriSpeech) / 10 minutes (VCTK) of demo waveform</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  Librispeech 2300
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/librispeech_2300.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_2300_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_2300_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_2300_time_5m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  Librispeech 3575
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/librispeech_3575.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_3575_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_3575_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_3575_time_5m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  Librispeech 7729
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/librispeech_7729.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_7729_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_7729_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/librispeech_7729_time_5m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  VCTK Speaker p301
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/vctk_p301.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p301_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p301_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p301_time_10m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  VCTK Speaker p318
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/vctk_p318.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p318_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p318_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p318_time_10m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="mui--pull-left">
+                  VCTK Speaker p360
+                  </span>
+                  <span class="mui--pull-right">
+                    <audio
+                      controls
+                      class="audio-player"
+                      preload="metadata"
+                      src="wavs/all_models/real_refs/vctk_p360.wav"></audio>
+                  </span>
+                  <span class="mui--clearfix"></span>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p360_time_10s.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p360_time_1m.wav">
+                  </audio>
+                </td>
+
+                <td>
+                  <audio
+                    controls
+                    class="audio-player"
+                    preload="metadata"
+                    src="wavs/varying_time/vctk_p360_time_10m.wav">
+                  </audio>
+                </td>
+
+              </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </body>
+</html>
