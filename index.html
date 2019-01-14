@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voice imitation samples TODO: title </title>
+    <title>Sample Efficient Adaptive Text-to-Speech | Samples</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link href="//cdn.muicss.com/mui-0.9.39/css/mui.min.css" rel="stylesheet" type="text/css" />
@@ -11,13 +11,30 @@
       body {
         text-align: center;
       }
+      .mui--text-display1, h1 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+      .mui--text-caption {
+        width: 90%;
+        margin: auto;
+      }
+      .mui--text-subhead {
+        width: 90%;
+        margin: auto;
+      }
+      .mui--text-margin-15 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
       #container {
         display: inline-block;
         margin: 0 auto;
         clear: both;
         text-align: left;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 15px;
+        max-width: 1300px;
       }
       .panel {
         overflow: hidden;
@@ -53,7 +70,7 @@
         width: 280px;
       }
       .audio-player {
-        width: 270px;
+        width: 210px;
         height: 55px;
       }
 
@@ -61,7 +78,17 @@
   </head>
   <body>
     <div id="container">
-      <div class="mui--text-display1 mui--text-dark-secondary">
+
+      <div class="mui-panel mui--text-center">
+        <div class="mui--text-title"><h1>Sample Efficient Adaptive Text-to-Speech</h1></div>
+        <div class="mui--text-subhead mui--text-margin-15">Yutian Chen, Yannis Assael, Brendan Shillingford, David Budden, Scott Reed, Heiga Zen, Quan Wang, Luis C. Cobo, Andrew Trask, Ben Laurie, Caglar Gulcehre, Aäron van den Oord, Oriol Vinyals, Nando de Freitas</div>
+        <div class="mui--text-caption mui--text-center">We present a meta-learning approach for adaptive text-to-speech (TTS) with few data. During training, we learn a multi-speaker model using a shared conditional WaveNet core and independent learned embeddings for each speaker. The aim of training is not to produce a neural network with fixed weights, which is then deployed as a TTS system. Instead, the aim is to produce a network that requires few data at deployment time to rapidly adapt to new speakers. We introduce and benchmark three strategies: (i) learning the speaker embedding while keeping the WaveNet core fixed, (ii) fine-tuning the entire architecture with stochastic gradient descent, and (iii) predicting the speaker embedding with a trained neural network encoder. The experiments show that these approaches are successful at adapting the multi-speaker neural network to new speakers, obtaining state-of-the-art results in both sample naturalness and voice similarity with merely a few minutes of audio data from new speakers.</div>
+        <div class="mui--text-body2 mui--text-center mui--text-margin-15"><a href="https://openreview.net/forum?id=rkzjUoAcFX" target="_blank">Accepted at ICLR 2019</a> | <a href="https://arxiv.org/abs/1809.10460" target="_blank">arXiv preprint</a></div>
+      </div>
+
+      <div class="mui-divider"></div>
+
+      <div class="mui--text-display1 mui--text-dark">
         Example imitated utterances for each approach
       </div>
       <!-------------------------------------------------------------------------------->
@@ -94,10 +121,7 @@
 
         </ul>
 
-
-        <div
-            class="mui-tabs__pane mui--is-active"
-            id="pane-sentence-1">
+        <div class="mui-tabs__pane mui--is-active" id="pane-sentence-1">
           <div class="box">
             <div class="label mui--text-dark-secondary mui--text-caption">
               Description
@@ -119,9 +143,9 @@
               <tr>
                 <th>Real demonstration utterance</th>
 
-                  <th>Both adapt speaker embedding and finetune network</th>
+                  <th>Adapt speaker embedding and finetune network</th>
 
-                  <th>Only adapt speaker embedding</th>
+                  <th>Adapt speaker embedding (only)</th>
 
                   <th>Encoder network</th>
 
@@ -422,9 +446,9 @@
               <tr>
                 <th>Real demonstration utterance</th>
 
-                  <th>Both adapt speaker embedding and finetune network</th>
+                  <th>Adapt speaker embedding and finetune network</th>
 
-                  <th>Only adapt speaker embedding</th>
+                  <th>Adapt speaker embedding (only)</th>
 
                   <th>Encoder network</th>
 
@@ -701,9 +725,7 @@
           </table>
         </div>
 
-        <div
-            class="mui-tabs__pane "
-            id="pane-sentence-3">
+        <div class="mui-tabs__pane" id="pane-sentence-3">
           <div class="box">
             <div class="label mui--text-dark-secondary mui--text-caption">
               Description
@@ -725,9 +747,9 @@
               <tr>
                 <th>Real demonstration utterance</th>
 
-                  <th>Both adapt speaker embedding and finetune network</th>
+                  <th>Adapt speaker embedding and finetune network</th>
 
-                  <th>Only adapt speaker embedding</th>
+                  <th>Adapt speaker embedding (only)</th>
 
                   <th>Encoder network</th>
 
@@ -1028,9 +1050,9 @@
               <tr>
                 <th>Real demonstration utterance</th>
 
-                  <th>Both adapt speaker embedding and finetune network</th>
+                  <th>Adapt speaker embedding and finetune network</th>
 
-                  <th>Only adapt speaker embedding</th>
+                  <th>Adapt speaker embedding (only)</th>
 
                   <th>Encoder network</th>
 
@@ -1310,7 +1332,7 @@
       </div>
 
       <!-------------------------------------------------------------------------------->
-      <div class="mui--text-display1 mui--text-dark-secondary">
+      <div class="mui--text-display1 mui--text-dark">
         Effect of demo waveform length on quality
       </div>
       <div class="mui-panel">
@@ -1337,7 +1359,7 @@
 
                 <th>Using 1 minute of demo waveform</th>
 
-                <th>Using 5 minutes (LibriSpeech) / 10 minutes (VCTK) of demo waveform</th>
+                <th>Using 5 minutes (LibriSpeech)<br/>/ 10 minutes (VCTK) of demo waveform</th>
 
             </tr>
           </thead>
