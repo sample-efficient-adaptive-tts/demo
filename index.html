@@ -165,6 +165,7 @@
           audio.currentTime = 0;
           audio.play();
           icon.innerText = "pause_circle_filled";
+          audio.onended = function() { icon.innerText = "play_circle_filled"; };
         } else {
           audio.pause();
           icon.innerText = "play_circle_filled";
