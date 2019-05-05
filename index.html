@@ -39,6 +39,81 @@
       .panel {
         overflow: hidden;
       }
+      /* for divs inside text-align: center */
+      .inside-center {
+        display: inline-block;
+      }
+
+      .poster-container {
+        height: 250px;
+        padding-bottom: 5px;
+      }
+      .poster {
+        display: table;
+      }
+      .poster > div {
+        display: table-row;
+      }
+      .poster > div > div {
+        display: table-cell;
+      }
+      .poster img {
+        display: block;
+        border: 3px solid black;
+        width: 197px;
+        height: auto;
+      }
+      .poster img:hover {
+        border: 3px solid #2196F3;
+      }
+
+      .poster-narrate-col {
+        position: relative;
+        padding-top: 20px;
+        width: 25px;
+        user-select: none;
+      }
+      .poster-narrate-col > div {
+        position: absolute;
+      }
+      .poster-narrate-col span.material-icons {
+        cursor: pointer;
+        color: #2196f3;
+      }
+      .poster-narrate-col span.material-icons:hover {
+        color: #44aaff;
+      }
+      span.poster-example-play-button {
+        font-size: 11pt;
+        color: #2196f3;
+      }
+
+      /* left column */
+      .poster-narrate0 {
+        top: 25%;
+      }
+      .poster-narrate1 {
+        top: 55%;
+      }
+      .poster-narrate2 {
+        top: 85%;
+      }
+      /* right column */
+      .poster-narrate3 {
+        top: 20%;
+      }
+      .poster-narrate4 {
+        top: 40%;
+      }
+      .poster-narrate5 {
+        top: 60%;
+      }
+      .poster-narrate6 {
+        top: 80%;
+      }
+      .poster-narrate7 {
+        top: 90%;
+      }
 
       .box {
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
@@ -75,6 +150,27 @@
       }
 
     </style>
+    <script>
+      function playNarration(idx) {
+        var audio = document.getElementById("narrate" + idx);
+        var icon = document.getElementById("icon" + idx);
+        if (audio.paused) {
+          // Stop all others besides this one:
+          for (var i = 0; i <= 7; i++) {
+            if (i != idx) {
+              document.getElementById("narrate" + i).pause();
+              document.getElementById("icon" + i).innerText = "play_circle_filled";
+            }
+          }
+          audio.currentTime = 0;
+          audio.play();
+          icon.innerText = "pause_circle_filled";
+        } else {
+          audio.pause();
+          icon.innerText = "play_circle_filled";
+        }
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132423246-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -91,6 +187,51 @@
         <div class="mui--text-subhead mui--text-margin-15">Yutian Chen, Yannis Assael, Brendan Shillingford, David Budden, Scott Reed, Heiga Zen, Quan Wang, Luis C. Cobo, Andrew Trask, Ben Laurie, Caglar Gulcehre, Aäron van den Oord, Oriol Vinyals, Nando de Freitas</div>
         <div class="mui--text-caption mui--text-center">We present a meta-learning approach for adaptive text-to-speech (TTS) with few data. During training, we learn a multi-speaker model using a shared conditional WaveNet core and independent learned embeddings for each speaker. The aim of training is not to produce a neural network with fixed weights, which is then deployed as a TTS system. Instead, the aim is to produce a network that requires few data at deployment time to rapidly adapt to new speakers. We introduce and benchmark three strategies: (i) learning the speaker embedding while keeping the WaveNet core fixed, (ii) fine-tuning the entire architecture with stochastic gradient descent, and (iii) predicting the speaker embedding with a trained neural network encoder. The experiments show that these approaches are successful at adapting the multi-speaker neural network to new speakers, obtaining state-of-the-art results in both sample naturalness and voice similarity with merely a few minutes of audio data from new speakers.</div>
         <div class="mui--text-body2 mui--text-center mui--text-margin-15"><a href="https://openreview.net/forum?id=rkzjUoAcFX" target="_blank">Accepted at ICLR 2019</a> | <a href="https://arxiv.org/abs/1809.10460" target="_blank">arXiv preprint</a></div>
+
+        <div class="mui--text-body2 mui--text-center">
+          <div>
+            <!-- invisible, played via javascript: -->
+            <audio id="narrate0" src="poster/narrate_tts/text_000.wav"></audio>
+            <audio id="narrate1" src="poster/narrate_tts/text_001.wav"></audio>
+            <audio id="narrate2" src="poster/narrate_tts/text_002.wav"></audio>
+            <audio id="narrate3" src="poster/narrate_tts/text_003.wav"></audio>
+            <audio id="narrate4" src="poster/narrate_tts/text_004.wav"></audio>
+            <audio id="narrate5" src="poster/narrate_tts/text_005.wav"></audio>
+            <audio id="narrate6" src="poster/narrate_tts/text_006.wav"></audio>
+            <audio id="narrate7" src="poster/narrate_tts/text_007.wav"></audio>
+          </div>
+          <div class="inside-center">
+            <div class="box">
+              <div class="poster-container inside-center">
+                <div class="poster">
+                  <div>
+                    <div class="poster-narrate-col">
+                      <div class="poster-narrate0"><span class="material-icons" id="icon0" onclick="playNarration(0)">play_circle_filled</span></div>
+                      <div class="poster-narrate1"><span class="material-icons" id="icon1" onclick="playNarration(1)">play_circle_filled</span></div>
+                      <div class="poster-narrate2"><span class="material-icons" id="icon2" onclick="playNarration(2)">play_circle_filled</span></div>
+                    </div>
+                    <div>
+                      <a target="_blank" href="poster/poster.pdf">
+                        <img src="poster/thumb.png" />
+                      </a>
+                    </div>
+                    <div class="poster-narrate-col">
+                      <div class="poster-narrate3"><span class="material-icons" id="icon3" onclick="playNarration(3)">play_circle_filled</span></div>
+                      <div class="poster-narrate4"><span class="material-icons" id="icon4" onclick="playNarration(4)">play_circle_filled</span></div>
+                      <div class="poster-narrate5"><span class="material-icons" id="icon5" onclick="playNarration(5)">play_circle_filled</span></div>
+                      <div class="poster-narrate6"><span class="material-icons" id="icon6" onclick="playNarration(6)">play_circle_filled</span></div>
+                      <div class="poster-narrate7"><span class="material-icons" id="icon7" onclick="playNarration(7)">play_circle_filled</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mui--text-caption">
+                Click the <span class="material-icons poster-example-play-button">play_circle_filled</span> buttons to hear an overview of each section, narrated by the model finetuned to Yutian's voice using only 5 minutes of audio.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="mui-divider"></div>
